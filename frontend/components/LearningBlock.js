@@ -2,17 +2,21 @@ import React from "react";
 import BigBlueButton from "./BigBlueButton";
 import CodeWindow from "./CodeWindow";
 
-function LearningBlock() {
+function LearningBlock({ pageRefs }) {
   return (
-    <div className="px-16 py-20">
+    <div
+      ref={(el) => (pageRefs.current = { ...pageRefs.current, learning: el })}
+      className="px-16 py-32"
+    >
+      {/* py-20 */}
       <a className="uppercase font-bold text-sm text-blue-700 pl-14">
         Learning
       </a>
-      <p className="text-black text-3xl font-bold pl-14 mt-6">
+      <p className="text-black text-3xl font-bold pl-14 mt-6 mb-6">
         Improve your development skills by taking on challenges from real
         companies
       </p>
-      <a className="font-bold text-sm text-blue-700 pl-14">
+      <a className="font-bold text-md text-blue-700 pl-14">
         Complete code below to print only even numbers in range from 1 to 10
       </a>
       <div className="mt-6 flex justify-between">

@@ -2,9 +2,12 @@ import React from "react";
 import BigCard from "./BigCard";
 import BigBlueButton from "./BigBlueButton";
 
-function PartnersBlock() {
+function PartnersBlock({ pageRefs }) {
   return (
-    <div className="px-16 pt-20 pb-16">
+    <div
+      ref={(el) => (pageRefs.current = { ...pageRefs.current, partners: el })}
+      className="px-16 pt-32 pb-16"
+    >
       <a className="uppercase font-bold text-sm text-blue-700 pl-14">
         Partners
       </a>
