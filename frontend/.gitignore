@@ -12,6 +12,8 @@
 /.next/
 /out/
 
+/build/cache
+
 # misc
 .DS_Store
 *.pem
