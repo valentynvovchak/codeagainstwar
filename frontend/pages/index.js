@@ -11,9 +11,13 @@ import AboutBlock from "../components/AboutBlock";
 import LearningBlock from "../components/LearningBlock";
 import PartnersBlock from "../components/PartnersBlock";
 import { useRef } from "react";
+import { useRouter } from "next/dist/client/router";
+import Router from "next/router";
+import Link from "next/link";
 
 export default function Home() {
   const pageRefs = useRef({});
+  const router = useRouter();
   return (
     <div className="">
       <Head>
@@ -25,7 +29,13 @@ export default function Home() {
       <Header pageRefs={pageRefs} />
       <main className="flex px-6">
         <HeroCard img="solider-1.webp" title="Help Ukraine" />
-        <HeroCard img="solider-1.webp" title="Take Challenges" />
+        <Link href="challenges.js">
+          <HeroCard
+            img="solider-1.webp"
+            title="Take Challenges"
+            //onClick={() => router.push("challenges")}
+          />
+        </Link>
         <HeroCard img="solider-1.webp" title="Get Job Offers" />
       </main>
       <AboutBlock pageRefs={pageRefs} />
