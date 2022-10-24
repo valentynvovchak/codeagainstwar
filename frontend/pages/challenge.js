@@ -28,8 +28,8 @@ function Challenge() {
         />
         {/* </Link> */}
         <p className="text-white text-2xl font-semibold px-8 pl-32 pt-10">
-          Complete code below to cleate a function 'slugify' to generate unique
-          url for article by it`s title
+          Complete code below to cleate a function {"'slugify'"} to generate
+          unique url for article by it{"`"}s title
         </p>
         <div className="bg-white rounded-2xl m-10 mx-12 box-border flex justify-around">
           <div className="pt-12 pl-20 mr-24">
@@ -37,9 +37,9 @@ function Challenge() {
               Examples
             </p>
             <p className="font-semibold text-xl w-[300px]">
-              How to become a really good programmer ->
+              How to become a really good programmer {"->"}
               /how-to-become-a-really-good-programmer<br></br>
-              Air alarm: types of signals and their meaning ->
+              Air alarm: types of signals and their meaning {"->"}
               /air-alarm-types-of-signals-and-their-meaning
             </p>
           </div>
@@ -56,7 +56,7 @@ function Challenge() {
                 def slugify(title): # put your code here, good luck :)
               </textarea>
               <textarea className="bg-gray-100 w-lg h-72 mx-8 my-4 rounded-b-3xl pl-6 pt-6 outline-none resize-none w-11/12">
-                Console >
+                Console {">"}
               </textarea>
             </div>
           </div>
