@@ -56,7 +56,7 @@ function Challenge() {
                 def slugify(title): # put your code here, good luck :)
               </textarea>
               <textarea className="bg-gray-100 w-lg h-72 mx-8 my-4 rounded-b-3xl pl-6 pt-6 outline-none resize-none w-11/12">
-                Console {">"}
+                Console
               </textarea>
             </div>
           </div>

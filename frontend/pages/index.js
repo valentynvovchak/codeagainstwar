@@ -29,7 +29,7 @@ export default function Home() {
       <Header pageRefs={pageRefs} />
       <main className="flex px-6">
         <HeroCard img="solider-1.webp" title="Help Ukraine" />
-        <Link href="challenges.js">
+        <Link href="/challenges">
           <HeroCard
             img="solider-1.webp"
             title="Take Challenges"
