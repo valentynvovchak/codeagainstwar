@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/dist/client/router";
+import Router from "next/router";
+import Link from "next/link";
 
 function HeroCard({ img, title, description, buttonText }) {
   return (

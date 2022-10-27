@@ -6,8 +6,12 @@ import {
   UserCircleIcon,
   UsersIcon,
   SearchIcon,
+  ArrowSmLeftIcon,
 } from "@heroicons/react/solid";
+
 import React, { useRef } from "react";
+import { useRouter } from "next/dist/client/router";
+import Router from "next/router";
 
 function Header({ pageRefs }) {
   function scrollIntoView(type) {
@@ -15,6 +19,7 @@ function Header({ pageRefs }) {
       behavior: "smooth",
     });
   }
+  const router = useRouter();
   return (
     <header className="sticky top-0 z-50 grid grid-cols-2 bg-gray-100 py-5 px-5 md:px-10">
       {/* Left */}
@@ -51,7 +56,10 @@ function Header({ pageRefs }) {
         <div className="flex items-center space-x-4 justify-end text-blue-700">
           <div className=" flex items-center space-x-2 border-2 border-gray-300 p-1 rounded-full">
             <MenuIcon className="h-6" />
-            <UserCircleIcon className="h-6" />
+            <UserCircleIcon
+              className="h-6 cursor-pointer"
+              onClick={() => router.push("profile")}
+            />
           </div>
         </div>
       </div>
