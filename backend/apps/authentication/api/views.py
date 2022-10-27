@@ -1,10 +1,11 @@
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 
 class TestOkView(APIView):
-    # authentication_classes = []
+    # authentication_classes = [IsAuthenticated]
     # http_method_names = ['post']
 
     def post(self, request, *args, **kwargs):
