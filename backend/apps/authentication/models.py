@@ -9,14 +9,14 @@ from caw_proj.defs import *
 
 class UserManager(BaseUserManager):
 
-    def _create_user(self, email, password, is_active, is_staff, is_superuser, **extra_fields):
+    def _create_user(self, username, first_name, last_name, email, password, is_active, is_staff, is_superuser, **extra_fields):
         # if not username:
         #     raise TypeError('Users must have a username.')
 
         email = self.normalize_email(email)
         user = self.model(
-            email=email, is_active=is_active, is_staff=is_staff, is_superuser=is_superuser,
-            date_joined=timezone.now(), **extra_fields
+            username=username, first_name=first_name, last_name=last_name, email=email, is_active=is_active,
+            is_staff=is_staff, is_superuser=is_superuser, date_joined=timezone.now(), **extra_fields
         )
 
         user.set_password(password)
@@ -24,14 +24,14 @@ class UserManager(BaseUserManager):
 
         return user
 
-    def create_user(self, username, email, password, **extra_fields):
+    def create_user(self, username, first_name, last_name, email, password, **extra_fields):
         return self._create_user(
-            username, email, password, is_active=True, is_staff=False, is_superuser=False, **extra_fields
+            username, first_name, last_name, email, password, is_active=True, is_staff=False, is_superuser=False, **extra_fields
         )
 
     def create_superuser(self, email, password, **extra_fields):
         user = self._create_user(
-            email, password, is_active=True, is_staff=True, is_superuser=True, **extra_fields
+            None, None, None, email, password, is_active=True, is_staff=True, is_superuser=True, **extra_fields
         )
 
         user.save(using=self._db)
@@ -46,6 +46,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     username = models.CharField(max_length=NAME_LENGTH, unique=True, null=True, blank=True)
+    first_name = models.CharField(max_length=NAME_LENGTH, unique=True, null=True, blank=True)
+    last_name = models.CharField(max_length=NAME_LENGTH, unique=True, null=True, blank=True)
+
     profile_picture = models.ImageField(upload_to=get_upload_picture, default=None, null=True, blank=True)
 
     email = models.EmailField(max_length=NAME_LENGTH, unique=True)

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
+from django.template.defaulttags import url
 from django.urls import path, include
 from django.conf.urls.static import static
 from rest_framework import routers
@@ -25,6 +26,7 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('apps.api.urls')),
+    path('auth/', include('drf_social_oauth2.urls', namespace='drf'))
 ]
 
 if not settings.IS_PRODUCTION_ENV:
