@@ -42,16 +42,14 @@ REST_FRAMEWORK_PROD = {
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
-
-    # 'DEFAULT_RENDERER_CLASSES': (
-    #     'rest_framework.renderers.JSONRenderer',
-    #     # 'rest_framework.renderers.TemplateHTMLRenderer',
-    # ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
     # # 'TEST_REQUEST_DEFAULT_FORMAT': 'json',
     # 'USER_DETAILS_SERIALIZER': 'apps.accounts.api.serializers.UserSerializer',
 
-    # # 'EXCEPTION_HANDLER': 'caw_proj.exceptions.core_exception_handler',  !!
-    # # 'NON_FIELD_ERRORS_KEY': 'error',  !!
+    'EXCEPTION_HANDLER': 'caw_proj.exceptions.core_exception_handler',
+    'NON_FIELD_ERRORS_KEY': 'error',
 }
 
 if not IS_PRODUCTION_ENV:
@@ -59,6 +57,7 @@ if not IS_PRODUCTION_ENV:
         'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
         'PAGE_SIZE': 10
     })
+    REST_FRAMEWORK_PROD.update({'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer', 'rest_framework.renderers.BrowsableAPIRenderer')})
     REST_FRAMEWORK = REST_FRAMEWORK_PROD
 else:
     REST_FRAMEWORK = REST_FRAMEWORK_PROD
