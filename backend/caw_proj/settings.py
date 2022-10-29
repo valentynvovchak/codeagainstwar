@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # Apps
+    'apps.api',
     'apps.authentication',
+    'corsheaders',
 
     # Custom
     'debug_toolbar',
@@ -52,9 +54,15 @@ INSTALLED_APPS = [
     'rest_framework',
     # 'rest_framework.authtoken',
     # 'dj_rest_auth',
+
+    # oauth
+    'oauth2_provider',
+    'social_django',
+    'drf_social_oauth2',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -78,6 +86,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -168,6 +178,10 @@ SITE_ID = 1
 
 AUTH_USER_MODEL = 'authentication.User'
 
+
+CORS_ORIGIN_WHITELIST = [  # for React
+    'http://localhost:3000',
+]
 
 # Account settings
 
