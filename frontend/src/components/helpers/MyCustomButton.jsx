@@ -2,8 +2,37 @@ import React from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 
 const MyCustomButton = () => {
+  const postConvertToken = (googleAccessToken) => {
+    // Simple POST request with a JSON body using fetch
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        grant_type: "convert_token",
+        client_id: process.env.REACT_APP_CLIENT_ID,
+        client_secret: process.env.REACT_APP_CLIENT_SECRET,
+        backend: "google-oauth2",
+        token: googleAccessToken,
+      }),
+    };
+    fetch("https://codeagainstwar.online/auth/convert-token/", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("access_token", JSON.stringify(data.access_token));
+        localStorage.setItem(
+          "refresh_token",
+          JSON.stringify(data.refresh_token)
+        );
+      });
+  };
+
+  //access_token
+  //refresh_token
   const login = useGoogleLogin({
-    onSuccess: (codeResponse) => console.log(codeResponse),
+    onSuccess: function (codeResponse) {
+      //console.log(codeResponse);
+      postConvertToken(codeResponse.access_token);
+    },
     flow: "implicit",
   });
 

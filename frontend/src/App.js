@@ -11,14 +11,15 @@ import Challenge from "./components/Challenge";
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
+//require("dotenv").config();
 
 function App() {
   // googleLogout();
   const pageRefs = useRef({});
-
+  // alert(process.env.REACT_APP_CLIENT_ID);
   return (
     <>
-      <GoogleOAuthProvider clientId="1047839081489-v1v1dubc557qiqq36mhag4neskapnurk.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
         <div className="App">
           <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
         </div>
