@@ -50,6 +50,9 @@ REST_FRAMEWORK_PROD = {
 
     'EXCEPTION_HANDLER': 'caw_proj.exceptions.core_exception_handler',
     'NON_FIELD_ERRORS_KEY': 'error',
+
+    # %Y-%m-%dT%H:%M:%S.%fZ
+    'DATETIME_FORMAT': "%d-%m-%Y, %H:%M:%S",
 }
 
 if not IS_PRODUCTION_ENV:

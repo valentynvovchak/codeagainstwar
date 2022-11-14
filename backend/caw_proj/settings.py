@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # Apps
     'apps.api',
     'apps.authentication',
+    'apps.core',
     'corsheaders',
 
     # Custom
@@ -218,12 +219,21 @@ from .extra_settings.third_party.google import *  # noqa
 
 
 # CONSTANTS
+USD = "USD"
+EUR = "EUR"
+UAH = "UAH"
+RUB = "RUB"
+GBP = "GBP"
+PLN = "PLN"
+CZK = "CZK"
+
 CURRENCY_CHOICES = (
-    ("USD", "USD"),
-    ("EUR", "EUR"),
-    ("UAH", "UAH"),
-    ("RUB", "RUB"),
-    ("GBP", "GBP"),
-    ("PLN", "PLN"),
-    ("CZK", "CZK"),
+    (USD, USD),
+    (EUR, EUR),
+    (UAH, UAH),
+    (RUB, RUB),
+    (GBP, GBP),
+    (PLN, PLN),
+    (CZK, CZK),
 )
+
