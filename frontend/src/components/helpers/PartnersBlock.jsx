@@ -1,5 +1,5 @@
-import React from "react";
-import BigCard from "./BigCard";
+import React         from "react";
+import BigCard       from "./BigCard";
 import BigBlueButton from "./BigBlueButton";
 
 function PartnersBlock({ pageRefs }) {

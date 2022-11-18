@@ -1,9 +1,8 @@
 import { MenuIcon, UserCircleIcon } from "@heroicons/react/solid";
-
-import React from "react";
-import MyCustomButton from "./helpers/MyCustomButton";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import { Link } from "react-router-dom";
+import   React                      from "react";
+import   MyCustomButton             from "./helpers/MyCustomButton";
+import { GoogleOAuthProvider }      from "@react-oauth/google";
+import { Link }                     from "react-router-dom";
 
 function Header({ pageRefs }) {
   function scrollIntoView(type) {

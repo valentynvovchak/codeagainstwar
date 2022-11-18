@@ -7,7 +7,6 @@ function BigCard({ img }) {
         <img
           src={img}
           layout="fill"
-          //objectFit="cover"
           className="rounded-2xl"
         />
       </div>

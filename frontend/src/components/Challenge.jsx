@@ -1,30 +1,15 @@
-import React from "react";
-import Header from "./Header";
-// import Head from "next/head";
-// import Link from "next/link";
-// import { useRouter } from "next/dist/client/router";
-import { Link } from "react-router-dom";
-import {
-  GlobeAltIcon,
-  MenuIcon,
-  UserCircleIcon,
-  UsersIcon,
-  SearchIcon,
-  ArrowSmLeftIcon,
-} from "@heroicons/react/solid";
+import   React             from "react";
+import   Header            from "./Header";
+import { Link }            from "react-router-dom";
+import { ArrowSmLeftIcon } from "@heroicons/react/solid";
 
 function Challenge() {
-  // const router = useRouter();
   return (
     <div>
-      {/* <Head>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
-      </Head> */}
       <Header />
       <div className="bg-gradient-to-b from-blue-700 to-white relative">
         <Link to="/challenges">
           <ArrowSmLeftIcon
-            // onClick={() => router.push("challenges")}
             className="h-10 absolute left-16 top-9 text-white cursor-pointer"
           />
         </Link>

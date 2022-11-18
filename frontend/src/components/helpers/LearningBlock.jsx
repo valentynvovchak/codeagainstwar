@@ -1,6 +1,6 @@
-import React from "react";
+import React         from "react";
 import BigBlueButton from "./BigBlueButton";
-import CodeWindow from "./CodeWindow";
+import CodeWindow    from "./CodeWindow";
 
 function LearningBlock({ pageRefs }) {
   return (
@@ -8,7 +8,6 @@ function LearningBlock({ pageRefs }) {
       ref={(el) => (pageRefs.current = { ...pageRefs.current, learning: el })}
       className="px-16 py-32"
     >
-      {/* py-20 */}
       <a className="uppercase font-bold text-sm text-blue-700 pl-14">
         Learning
       </a>

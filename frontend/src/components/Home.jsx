@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import HeroCard from "./helpers/HeroCard";
-import AboutBlock from "./helpers/AboutBlock";
-import LearningBlock from "./helpers/LearningBlock";
-import PartnersBlock from "./helpers/PartnersBlock";
-import Header from "./Header";
+import   React         from "react";
+import { Link }        from 'react-router-dom';
+import   HeroCard      from "./helpers/HeroCard";
+import   AboutBlock    from "./helpers/AboutBlock";
+import   LearningBlock from "./helpers/LearningBlock";
+import   PartnersBlock from "./helpers/PartnersBlock";
+import   Header        from "./Header";
 
 function Home({ pageRefs }) {
     return (<div ref={(el) => (pageRefs.current = { ...pageRefs.current, home: el })}>
