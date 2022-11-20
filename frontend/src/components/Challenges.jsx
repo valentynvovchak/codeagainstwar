@@ -18,12 +18,13 @@ function Challenges() {
               type="text"
               placeholder="Start your search"
             />
-            <SearchIcon className="hidden md:inline-flex h-8 bg-blue-700 text-white rounded-full p-2 cursor-pointer md:mx-2" />
+            <SearchIcon className="inline-flex h-8 bg-blue-700 text-white rounded-full p-2 cursor-pointer mr-1 " />
           </div>
-          <a className="pt-3">Difficulty</a>
-          <a className="pt-3 pl-5">Reward</a>
+          <a className="pt-3 sm:text-sm md:pl-9">Difficulty</a>
+          <a className="pt-3 pl-5 sm:text-sm sm:pl-0 md:pl-1">Reward</a>
         </div>
-        <div className="h-[440px] overflow-scroll scrollbar-hide">
+        <div className="h-[440px] overflow-scroll scrollbar-hide sm:h-full md:h-full">
+          <ChallengeItem />
           <ChallengeItem />
           <ChallengeItem />
           <ChallengeItem />

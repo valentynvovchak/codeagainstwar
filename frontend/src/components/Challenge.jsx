@@ -16,10 +16,10 @@ function Challenge() {
       <div className="bg-gradient-to-b from-blue-700 to-white relative">
         <Link to="/challenges">
           <ArrowSmLeftIcon
-            className="h-10 absolute left-16 top-9 text-white cursor-pointer"
+            className="h-10 absolute left-16 top-9 text-white cursor-pointer sm:left-8"
           />
         </Link>
-        <p className="text-white text-2xl font-semibold px-8 pl-32 pt-10">
+        <p className="text-white text-2xl font-semibold px-8 pl-32 pt-10 sm:pl-20">
           Complete code below to cleate a function {"'slugify'"} to generate
           unique url for article by it{"`"}s title
         </p>

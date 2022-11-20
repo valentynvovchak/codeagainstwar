@@ -39,7 +39,7 @@ const MyCustomButton = () => {
   return (
     <button
       onClick={() => login()}
-      className="lg: text-white font-medium bg-blue-700 px-6 py-1 rounded-full shadow-md hover:shadow-xl active:scale-90 transition duration-150 text-center text-base sm: text-base"
+      className=" text-white font-medium bg-blue-700 px-6 py-1 rounded-full shadow-md hover:shadow-xl active:scale-90 transition duration-150 text-center text-base sm:text-xs sm:flex-shrink-0 md:text-sm"
     >
       Sign up
     </button>
