@@ -12,7 +12,7 @@ function HeroCard({ img, title, description, buttonText }) {
         />
       </div>
       <div className="absolute">
-        <h3 className="text-xl w-64 mt-4 font-bold px-3">{title}</h3>
+        <h3 className="text-xl w-64 mt-4 font-bold px-3 md:px-0">{title}</h3>
         {/* <p>{description}</p> */}
         {/* <button className="text-sm text-white bg-gray-900 px-4 py-2 rounded-lg mt-5">
           {buttonText}
