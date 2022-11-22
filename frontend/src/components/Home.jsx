@@ -8,15 +8,20 @@ import   Header        from "./Header";
 
 function Home({ pageRefs }) {
   return (
-    <div ref={(el) => (pageRefs.current = { ...pageRefs.current, home: el })}>
+    <div
+      ref={(el) => (pageRefs.current = { ...pageRefs.current, home: el })}
+      className=""
+    >
       <Header pageRefs={pageRefs} />
-      <div className="grid grid-cols-3 sm:grid-cols-1">
-        <HeroCard img="solider-1.webp" title="Help Ukraine" />
-        <Link to="/challenges">
-          <HeroCard img="solider-1.webp" title="Take Challenges" />
-        </Link>
+      <div className="flex justify-center self-center">
+        <div className="grid grid-cols-3 sm:grid-cols-1">
+          <HeroCard img="solider-1.webp" title="Help Ukraine" />
+          <Link to="/challenges">
+            <HeroCard img="solider-1.webp" title="Take Challenges" />
+          </Link>
 
-        <HeroCard img="solider-1.webp" title="Get Job Offers" />
+          <HeroCard img="solider-1.webp" title="Get Job Offers" />
+        </div>
       </div>
       <AboutBlock pageRefs={pageRefs} />
       <LearningBlock pageRefs={pageRefs} />

@@ -15,13 +15,13 @@ function Header({ pageRefs }) {
     <GoogleOAuthProvider clientId="1047839081489-v1v1dubc557qiqq36mhag4neskapnurk.apps.googleusercontent.com">
       <header className="sticky top-0 z-50 grid grid-cols-2 bg-gray-100 py-5 px-10 sm:py-2 sm:flex justify-between md:py-4">
         <div className="relative flex items-center h-10 cursor-pointer my-auto ">
+        <MyCustomButton />
           <Link to="/" onClick={() => scrollIntoView("home")}>
             <img
               src="logo.png"
               layout="fill"
               width="300px"
-              // className="lg:w-[300px] md:w-[200px] sm:w-[100px] xs:w-[100px]"
-              className="lg:w-[300px] md:w-[150px] sm:w-[115px]"
+              className="lg:w-[300px] md:w-[150px] sm:w-[150px] sm:mx-5"
             />
           </Link>
         </div>
@@ -47,7 +47,6 @@ function Header({ pageRefs }) {
           >
             Partners
           </Link>
-          <MyCustomButton />
           <div className="flex items-center space-x-4 justify-end text-blue-700">
             <div className=" flex items-center space-x-2 border-2 border-gray-300 p-1 rounded-full sm:space-x-0">
               <MenuIcon className="h-6" />
