@@ -1,5 +1,4 @@
 import { MenuIcon, UserCircleIcon } from "@heroicons/react/solid";
-
 import React from "react";
 import MyCustomButton from "./helpers/MyCustomButton";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -22,7 +21,7 @@ function Header({ pageRefs }) {
               layout="fill"
               width="300px"
               // className="lg:w-[300px] md:w-[200px] sm:w-[100px] xs:w-[100px]"
-              className="lg:w-[300px] md:w-[150px] sm:w-[115px]"
+              className="lg:w-[300px] md:w-[150px] sm:w-[150px] order-2"
             />
           </Link>
         </div>
