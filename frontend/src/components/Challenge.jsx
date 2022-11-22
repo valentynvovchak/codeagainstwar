@@ -1,13 +1,13 @@
-import React from "react";
-import Header from "./Header";
+import   React             from "react";
+import   Header            from "./Header";
 import { Link }            from "react-router-dom";
 import { ArrowSmLeftIcon } from "@heroicons/react/solid";
-import Editor              from "./helpers/Editor";
+import   Editor            from "./helpers/Editor";
 
 const baseStyle = {
-  border: "1px solid rgb(31, 41, 55)",
-  backgroundColor: "white",
-};
+  border: '1px solid rgb(31, 41, 55)',
+  backgroundColor: 'white'
+}
 
 function Challenge() {
   return (

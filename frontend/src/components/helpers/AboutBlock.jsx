@@ -1,4 +1,4 @@
-import React from "react";
+import React         from "react";
 import BigBlueButton from "./BigBlueButton";
 
 function AboutBlock({ pageRefs }) {

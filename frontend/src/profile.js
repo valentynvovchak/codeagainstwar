@@ -1,20 +1,9 @@
-import React from "react";
+import React  from "react";
 import Header from "./components/Header";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-  useHistory,
-} from "react-router-dom";
-// import Head from "next/head";
 
 function Profile() {
   return (
     <div className="bg-gray-100 h-screen">
-      {/* <Head>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
-      </Head> */}
       <Header />
       <div className="bg-white mx-16 rounded-l-3xl flex justify-between">
         <div>

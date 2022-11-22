@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
-import ChallengeItem from "./helpers/ChallengeItem";
-import Header from "./Header";
-import { SearchIcon } from "@heroicons/react/solid";
+import   React, { useRef } from "react";
+import   ChallengeItem     from "./helpers/ChallengeItem";
+import   Header            from "./Header";
+import { SearchIcon }      from "@heroicons/react/solid";
 
 function Challenges() {
   const pageRefs = useRef({});

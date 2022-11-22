@@ -1,9 +1,13 @@
-import uuid as uuid
+import os
+import uuid
 
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin, Group
 from django.db import models
+from django.db.models import Sum, Avg
 from django.utils import timezone
+
+from apps.core.models import Challenge
 from caw_proj.defs import *
 
 
@@ -41,7 +45,9 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
 
     def get_upload_picture(self, instance):
-        return f'users/profile_pictures/{instance}'
+        basename = str(uuid.uuid4())
+        discard, ext = os.path.splitext(instance)
+        return f'users/profile_pictures/{"".join([basename, ext])}'
 
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
@@ -52,13 +58,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     profile_picture = models.ImageField(upload_to=get_upload_picture, default=None, null=True, blank=True)
 
     email = models.EmailField(max_length=NAME_LENGTH, unique=True)
-    email_verified = models.BooleanField(default=False)
-    email_confirmed_change = models.BooleanField(default=False)
+    # email_verified = models.BooleanField(default=False)
+    # email_confirmed_change = models.BooleanField(default=False)
 
     # May be added:
+    solutions = models.ManyToManyField(to='core.Challenge', blank=True)
+    # total_earned = models.PositiveSmallIntegerField(default=0)
+
+    github = models.URLField(max_length=250, null=True, blank=True)
+
     # country = models.ForeignKey(to=Country, on_delete=models.PROTECT)
     # phone = models.OneToOneField(to=Phone, on_delete=models.SET_NULL, null=True, blank=True)
-
     # remember_me = models.BooleanField(default=False)
     # security_question = models.ForeignKey(to=SecurityQuestion, on_delete=models.SET_NULL, null=True, blank=True)
     # two_factor_auth = models.BooleanField(default=False)
@@ -72,7 +82,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(default=timezone.now, editable=False)
     updated_at = models.DateTimeField(default=timezone.now, editable=False)
 
-    # payment_methods = ...  # todo
+    # payment_methods = ...
 
     objects = UserManager()
 
@@ -81,19 +91,22 @@ class User(AbstractBaseUser, PermissionsMixin):
     # REQUIRED_FIELDS = ['email']
 
     @property
-    def get_name(self):
+    def total_earned(self):
+        return self.solutions.aggregate(Sum('cost')).get('cost__sum') or 0
+
+    @property
+    def name(self):
         if self.username:
             return f"{self.username}"
         else:
             return f"{self.email}"
 
     def __str__(self):
-        return self.get_name
+        return self.name
 
     def save(self, *args, **kwargs):
         if self.uuid:
             self.updated_at = timezone.now()
-
         return super().save(*args, **kwargs)
 
     class Meta:

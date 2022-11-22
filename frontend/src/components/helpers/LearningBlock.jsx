@@ -1,6 +1,6 @@
-import React from "react";
+import React         from "react";
 import BigBlueButton from "./BigBlueButton";
-import CodeWindow from "./CodeWindow";
+import CodeWindow    from "./CodeWindow";
 
 function LearningBlock({ pageRefs }) {
   return (
