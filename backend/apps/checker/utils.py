@@ -44,11 +44,18 @@ def make_tests(task_id, func_name, test_json):
         params_str = ", ".join(
             [str(param) if str(param).lstrip("-").isdigit() else f'\'{param}\'' for param in input_params]
         )
+        output_str = output or None
+        if output_str:
+            isinstances = isinstance(output_str, (dict, list, tuple, set, frozenset))
+            if str(output_str).lstrip("-").isdigit() or isinstances:
+                output_str = str(output_str)
+            else:
+                output_str = f'\'{output_str}\''
 
         functions.append(
             CodeBlock(
                 f'def test{test_index+1}()',
-                [f'\'{desc}\'', f'assert {func_name}({params_str}) == {output or None}']
+                [f'\'{desc}\'', f'assert {func_name}({params_str}) == {output_str}']
             )
         )
 
