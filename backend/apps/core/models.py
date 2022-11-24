@@ -35,7 +35,7 @@ class Challenge(models.Model):
     difficulty = models.CharField(max_length=50, choices=DifficultyChoices.choices, default=DifficultyChoices.EAZY)
     cost = models.PositiveSmallIntegerField(default=0)
     # currency = models.CharField(max_length=50, choices=CURRENCY_CHOICES, default=USD)
-    task = models.ForeignKey(to=Task, null=True, on_delete=models.SET_NULL)
+    task = models.ForeignKey(to=Task, null=True, blank=True, on_delete=models.SET_NULL)
 
     times_completed = models.PositiveSmallIntegerField(default=0)
 
