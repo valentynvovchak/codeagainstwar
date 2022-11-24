@@ -1,6 +1,6 @@
 import os
 
-from caw_proj.settings import CHECKER_SERVICE_PATH
+from caw_proj.settings import CHECKER_SERVICE_PATH, PYTEST_PATH_PROD, PYTEST_PATH_LOCAL, IS_PRODUCTION_ENV
 from .pytest_parser import PytestParser
 import subprocess
 
@@ -11,13 +11,14 @@ class CheckerService:
         self.test_file = f"test_{task}"
 
     def run_tests(self):
+        pytest_path = PYTEST_PATH_PROD if IS_PRODUCTION_ENV else PYTEST_PATH_LOCAL
+
         subprocess.run([
-            '/home/valya/codeagainstwar/venv/bin/pytest',
+            f'{pytest_path}',
             f'{CHECKER_SERVICE_PATH}/tests/{self.test_file}.py',
             '--json-report',
             f'--json-report-file={CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json']
         )
-        # return os.popen(f'pytest {CHECKER_SERVICE_PATH}/tests/{self.test_file}.py  --json-report --json-report-file={CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json').read()#.rstrip()
 
     def call(self):
         result = self.run_tests()
