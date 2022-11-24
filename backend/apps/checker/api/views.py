@@ -11,18 +11,18 @@ from caw_proj.settings import CHECKER_SERVICE_PATH
 class CheckAPIView(APIView):
 
     def post(self, *args, **kwargs):
-        try:
-            code = self.request.data['code']
-            task_id = self.request.data['task_id']
-            target_file = f"{CHECKER_SERVICE_PATH}/tasks/{task_id}.py"
+        # try:
+        code = self.request.data['code']
+        task_id = self.request.data['task_id']
+        target_file = f"{CHECKER_SERVICE_PATH}/tasks/{task_id}.py"
 
-            with open(target_file, 'w') as file:
-                file.write(code.replace("\r", ''))
+        with open(target_file, 'w') as file:
+            file.write(code.replace("\r", ''))
 
-            results = CheckerService(task_id).call()
-            os.remove(target_file)
+        results = CheckerService(task_id).call()
+        os.remove(target_file)
 
-            return Response(results, status=status.HTTP_200_OK)
+        return Response(results, status=status.HTTP_200_OK)
 
-        except Exception:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+        # except Exception:
+        #     return Response(status=status.HTTP_400_BAD_REQUEST)
