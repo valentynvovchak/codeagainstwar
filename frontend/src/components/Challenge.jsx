@@ -64,7 +64,9 @@ async function sendCode(editorRef, consoleRef) {
 
   let code = editorRef.current.editor.getValue()
 
-  let data = await (await checkCode(code, '3')).json();
+  let taskId = '4'
+
+  let data = await (await checkCode(code, taskId)).json();
 
   displayResults(data, consoleRef.current);
 }
