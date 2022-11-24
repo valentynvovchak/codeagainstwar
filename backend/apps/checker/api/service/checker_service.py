@@ -10,16 +10,12 @@ class CheckerService:
         self.test_file = f"test_{task}"
     
     def run_tests(self):
-        os.system(f'pytest {CHECKER_SERVICE_PATH}/tests/{self.test_file}.py  --json-report --json-report-file={CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json')
-
-        with open(f'{CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json', 'r') as report_file:
-            return report_file.read()
-        # return os.popen(f'pytest {CHECKER_SERVICE_PATH}/tests/{self.test_file}.py  --json-report --json-report-file={CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json').read()#.rstrip()
+        return os.popen(f'pytest {CHECKER_SERVICE_PATH}/tests/{self.test_file}.py  --json-report --json-report-file={CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json').read()#.rstrip()
 
     def call(self):
         result = self.run_tests()
         parsed = PytestParser(result).parse(report_file=f'{CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json')
-        # os.remove(f'{CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json')  # TODO RETURN
+        os.remove(f'{CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json')
         return parsed 
 
 
