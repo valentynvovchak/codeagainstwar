@@ -84,8 +84,8 @@ function Challenge() {
           Complete code below to cleate a function {"'slugify'"} to generate
           unique url for article by it{"`"}s title
         </p>
-        <div className="bg-white rounded-2xl m-10 pl-5 mx-12 box-border flex flex-row-reverse">
-          <div className="pt-12 pl-20 mr-24 w-full flex flex-col justify-between">
+        <div className="bg-white rounded-2xl m-10 pl-5 mx-12 box-border flex flex-row-reverse sm:flex-col-reverse md:flex-col-reverse">
+          <div className="pt-12 pl-20 mr-20 w-3/4 flex flex-col justify-around self-center">
             <p className="font-semibold text-xl border-b-2 border-black inline-block mb-4">
               Examples
             </p>
