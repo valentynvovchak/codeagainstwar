@@ -5,6 +5,7 @@ import   AboutBlock    from "./helpers/AboutBlock";
 import   LearningBlock from "./helpers/LearningBlock";
 import   PartnersBlock from "./helpers/PartnersBlock";
 import   Header        from "./Header";
+import   Footer        from "./helpers/Footer"
 
 function Home({ pageRefs }) {
   return (
@@ -26,6 +27,7 @@ function Home({ pageRefs }) {
       <AboutBlock pageRefs={pageRefs} />
       <LearningBlock pageRefs={pageRefs} />
       <PartnersBlock pageRefs={pageRefs} />
+      <Footer />
     </div>
   );
 }
