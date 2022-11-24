@@ -13,7 +13,9 @@
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-ace": "latest",
+    "ace-builds": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
