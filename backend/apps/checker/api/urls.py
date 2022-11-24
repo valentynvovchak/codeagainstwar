@@ -9,7 +9,8 @@ router = DefaultRouter()
 
 urlpatterns = [
     # /api/checker/...
-    path('', views.CheckAPIView.as_view(), name='checker')
+    path('', views.CheckAPIView.as_view(), name='checker'),
+    path('test/', views.TestAPIView.as_view(), name='test'),
 
 ] + router.urls
 

@@ -8,7 +8,7 @@ class CheckerService:
     def __init__(self, task):
         self.task_file = task
         self.test_file = f"test_{task}"
-    
+
     def run_tests(self):
         return os.popen(f'pytest {CHECKER_SERVICE_PATH}/tests/{self.test_file}.py  --json-report --json-report-file={CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json').read()#.rstrip()
 
