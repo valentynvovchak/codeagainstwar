@@ -15,12 +15,12 @@ class CheckerService:
     def call(self):
         result = self.run_tests()
         parsed = PytestParser(result).parse(report_file=f'{CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json')
-        os.remove(f'{CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json')
+        # os.remove(f'{CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json')  # TODO RETURN
         return parsed 
 
 
-if __name__ == "__main__":
-    checker = CheckerService('2')
-    result  = checker.call()
-    print("Summary: ", result)
+# if __name__ == "__main__":
+#     checker = CheckerService('2')
+#     result  = checker.call()
+#     print("Summary: ", result)
 
