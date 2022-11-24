@@ -95,17 +95,16 @@ function Challenge() {
               Air alarm: types of signals and their meaning {"->"}
               /air-alarm-types-of-signals-and-their-meaning
             </p>
-            <div
-              className="bg-gray-100 w-lg h-72 my-4 rounded-3xl pl-6 pt-6 resize-none"
-              style={baseStyle}
-            >
+            <div ref={consoleRef} className="bg-gray-100 w-lg h-72 my-4 rounded-3xl pl-6 pt-6 resize-none" style={{ ...baseStyle, ...centerConsoleContentStyle }}>
               Ready? Click 'Check' to prove you're a pro!
             </div>
           </div>
           <div className="w-5/6 mt-6 flex flex-col self-center">
             <div className="bg-gray-200 rounded-3xl relative" style={baseStyle}>
               <div className="bg-gray-800 w-full h-16 rounded-t-3xl relative">
-                <button className="bg-blue-700 rounded-full text-white px-9 py-1 absolute top-4 right-14 text-base font-medium active:scale-90 transition duration-150 text-center sm:text-sm sm:right-4 sm:px-3">
+                <button className="bg-blue-700 rounded-full text-white px-9 py-1 absolute top-4 right-14 text-base font-medium active:scale-90 transition duration-150 text-center sm:text-sm sm:right-4 sm:px-3"
+                  onClick={() => sendCode(editorRef, consoleRef)}
+                >
                   Check
                 </button>
                 <div className=" bg-blue-700 rounded-full h-5 w-5 absolute left-8 top-5"></div>

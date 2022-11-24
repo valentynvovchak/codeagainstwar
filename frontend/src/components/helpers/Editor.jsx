@@ -20,7 +20,7 @@ const cawEditorOptions = {
   showLineNumbers: true,
   tabSize: 2
 }
-export default Editor = React.forwardRef((props, ref) => (
+const Editor = React.forwardRef((props, ref) => (
     <AceEditor
     onLoad              = { changeSize }
     placeholder         = "# Put your code here! Good luck!"
@@ -36,3 +36,5 @@ export default Editor = React.forwardRef((props, ref) => (
     ref                 = { ref } />
   )
 );
+
+export default Editor;
