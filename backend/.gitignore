@@ -57,6 +57,8 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
+.pytest_cache
+
 
 # Translations
 *.mo
@@ -123,3 +125,6 @@ ENV/
 public/*
 !public/static/.gitkeep
 /public/media/
+/apps/checker/api/service/tests/
+/apps/checker/api/service/tasks/
+/apps/checker/api/service/reports/

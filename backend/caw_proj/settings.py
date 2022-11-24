@@ -47,9 +47,10 @@ INSTALLED_APPS = [
     'apps.api',
     'apps.authentication',
     'apps.core',
-    'corsheaders',
+    'apps.checker',
 
     # Custom
+    'corsheaders',
     'debug_toolbar',
     'nested_admin',
     'rest_framework',
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     'oauth2_provider',
     'social_django',
     'drf_social_oauth2',
+    'django_json_widget',
 ]
 
 MIDDLEWARE = [
@@ -237,3 +239,5 @@ CURRENCY_CHOICES = (
     (CZK, CZK),
 )
 
+CHECKER_SERVICE_PATH = os.path.join(BASE_DIR, f'apps/checker/api/service')
+CHECKER_SERVICE = 'apps.checker.api.service'

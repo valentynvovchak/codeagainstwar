@@ -6,10 +6,10 @@ from apps.core.models import Challenge
 @admin.register(Challenge)
 class ChallengeAdmin(admin.ModelAdmin):
     list_display = [
-        'id', 'title', 'cost_', 'difficulty_',
+        'id', 'title', 'task', 'cost_', 'difficulty_',
     ]
     list_display_links = ['id', 'title']
-    # raw_id_fields = []
+    raw_id_fields = ['task']
     list_filter = ['difficulty']
     date_hierarchy = 'created'
     search_fields = ('id', 'title', 'description')

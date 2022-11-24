@@ -1,8 +1,25 @@
+import json
+import os
+
 from django.db import models
 from django.utils import timezone
 from django.utils.safestring import mark_safe
 
-from caw_proj.settings import CURRENCY_CHOICES, USD
+
+class Task(models.Model):
+    function_name = models.CharField(max_length=50)
+    tests = models.JSONField(default=[{"input": [], "output": "", "desc": ""}])
+
+    def __str__(self):
+        return f'Task #{self.pk} {self.function_name}'
+
+    # def save(self, *args, **kwargs):
+    #     tests = make_tests(task_id=self.pk, func_name=self.function_name, test_json=self.tests)
+    #
+    #     with open(f'{CHECKER_SERVICE_PATH}/tests/test_{self.pk}.py', 'w') as test_file:
+    #         test_file.write(tests)
+    #
+    #     return super().save(*args, **kwargs)
 
 
 class Challenge(models.Model):
@@ -18,7 +35,7 @@ class Challenge(models.Model):
     difficulty = models.CharField(max_length=50, choices=DifficultyChoices.choices, default=DifficultyChoices.EAZY)
     cost = models.PositiveSmallIntegerField(default=0)
     # currency = models.CharField(max_length=50, choices=CURRENCY_CHOICES, default=USD)
-    # task = models.ForeignKey(to=Task)
+    task = models.ForeignKey(to=Task, null=True, on_delete=models.SET_NULL)
 
     times_completed = models.PositiveSmallIntegerField(default=0)
 
