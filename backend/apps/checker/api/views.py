@@ -32,6 +32,6 @@ class TestAPIView(APIView):
 
     def post(self, *args, **kwargs):
         task_id = self.request.data['task_id']
-        result = os.popen(f'pytest {CHECKER_SERVICE_PATH}/tests/test_{task_id}.py  --json-report --json-report-summary --json-report-omit streams  --json-report-file={CHECKER_SERVICE_PATH}/reports/report_test_{task_id}.json').read()#.rstrip()
+        result = os.popen(f'pytest {CHECKER_SERVICE_PATH}/tests/test_{task_id}.py  --json-report  --json-report-file={CHECKER_SERVICE_PATH}/reports/report_test_{task_id}.json').read()#.rstrip()
 
         return Response(result, status=status.HTTP_200_OK)
