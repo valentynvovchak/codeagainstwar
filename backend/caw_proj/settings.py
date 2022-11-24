@@ -241,3 +241,6 @@ CURRENCY_CHOICES = (
 
 CHECKER_SERVICE_PATH = os.path.join(BASE_DIR, f'apps/checker/api/service')
 CHECKER_SERVICE = 'apps.checker.api.service'
+PYTEST_PATH_LOCAL = os.path.join(BASE_DIR, *['venv', 'bin', 'pytest'])
+PYTEST_PATH_PROD = os.path.join(BASE_DIR.parent, *['venv', 'bin', 'pytest'])
+
