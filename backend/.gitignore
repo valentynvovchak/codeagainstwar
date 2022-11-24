@@ -11,7 +11,7 @@ temp.py
 
 public/media
 # Tests & migrations
-#test.py
+test.py
 #apps/*/migrations/*
 #apps/*/migrations/000*
 
