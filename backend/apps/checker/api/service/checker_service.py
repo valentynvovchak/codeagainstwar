@@ -12,7 +12,7 @@ class CheckerService:
 
     def run_tests(self):
         subprocess.run([
-            'pytest',
+            '/home/valya/codeagainstwar/venv/bin/pytest',
             f'{CHECKER_SERVICE_PATH}/tests/{self.test_file}.py',
             '--json-report',
             f'--json-report-file={CHECKER_SERVICE_PATH}/reports/report_{self.test_file}.json']
