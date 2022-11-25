@@ -17,7 +17,7 @@ function ChallengeItem({challenge}) {
       <a className="pl-4 sm:pl-0.5 sm:text-xs">{ challenge.id }</a>
       <a className="sm:text-xs">               { challenge.title }</a>
       <a className= { classNameDifficulty }>   { challenge.difficulty }</a>
-      <a className="pl-4 sm:pl-2 sm:text-xs">  { challenge.cost }$</a>
+      <a className="pl-4 sm:pl-2 sm:text-xs">  { challenge.cost }¢</a>
       <Link to={`/challenges/${challenge.id}`} taskId= { challenge.task }>
         <button className="bg-blue-700 w-32 py-1 rounded-2xl font-semibold text-white shadow-md hover:shadow-xl active:scale-90 transition duration-150 text-center sm:text-xs sm:w-10">
           Start!
