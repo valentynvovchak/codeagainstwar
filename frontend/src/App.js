@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/profile" element={<Profile pageRefs={pageRefs} />} />
         <Route path="/challenges" element={<Challenges />} />
-        <Route path="/challenge" element={<Challenge />} />
+        <Route path="/challenges/:id" element={<Challenge />} />
         <Route path="/" element={<Home pageRefs={pageRefs} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
