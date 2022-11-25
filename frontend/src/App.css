@@ -5,3 +5,11 @@
 .text-yellow-500 {
     color: rgb(234 179 8);
 }
+
+.text-green-500 {
+    color: rgb(0 255 0);
+}
+
+.text-red-500 {
+    color: rgb(255 0 0);
+}
