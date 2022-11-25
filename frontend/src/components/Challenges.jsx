@@ -1,10 +1,17 @@
-import   React, { useRef } from "react";
+import   React, { useRef, useState, useEffect } from "react";
 import   ChallengeItem     from "./helpers/ChallengeItem";
 import   Header            from "./Header";
 import { SearchIcon }      from "@heroicons/react/solid";
+import Requests            from "../caw_requests";
 
 function Challenges() {
   const pageRefs = useRef({});
+
+  const [challenges, setChallenges] = useState([]);
+
+  useEffect(() => {
+    Requests.getChallenges(setChallenges)
+  }, [])
 
   return (
     <div className="h-screen">
@@ -25,19 +32,9 @@ function Challenges() {
           <a className="pt-3 sm:hidden md:hidden">Difficulty</a>
           <a className="pt-3 pl-5 sm:hidden sm:pl-0 md:hidden">Reward</a>
         </div>
-        <div className="h-[440px] overflow-scroll scrollbar-hide sm:h-full md:h-full">
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-          <ChallengeItem />
-        </div>
+          <div className="h-[440px] overflow-scroll scrollbar-hide sm:h-full md:h-full">
+            { challenges.map(challenge => <ChallengeItem key={ challenge.id } challenge={ challenge }/>) }
+          </div>
       </div>
     </div>
   );

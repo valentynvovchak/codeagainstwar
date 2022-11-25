@@ -18,7 +18,7 @@ function Header({ pageRefs }) {
         <MyCustomButton />
           <Link to="/" onClick={() => scrollIntoView("home")}>
             <img
-              src="logo.png"
+              src="/logo.png"
               layout="fill"
               width="300px"
               className="lg:w-[300px] md:w-[150px] sm:w-[150px] sm:mx-5"
