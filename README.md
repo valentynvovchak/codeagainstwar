@@ -8,10 +8,13 @@ It was developed with my university groupmates team. This base sollution allows 
 Technical Stack
 ~~~~~~~~~~~~~~~
 
-* PostgreSQL
 * Python
+* PostgreSQL
+* Django
 * Django Rest Framework
 * React
+* Jenkins
+* Digitalocean
 
 Authors
 ~~~~~~~
