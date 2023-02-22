@@ -22,4 +22,4 @@ Authors
 Valentyn Vovchak
 
 
-![view](https://github.com/valentynvovchak/calypso-verify/main/media/view.png?raw=true)
+![view](https://github.com/valentynvovchak/calypso-verify/blob/main/media/view.png?raw=true)
