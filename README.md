@@ -20,7 +20,7 @@ Authors
 ~~~~~~~
 
 Valentyn Vovchak
-![This is an image](https://github.com/valentynvovchak/codeagainstwar/main/1.jpg?raw=true)
+![This is an image](https://github.com/valentynvovchak/codeagainstwar/blob/main/1.jpg?raw=true)
 
 ![view](https://github.com/valentynvovchak/codeagainstwar/blob/main/demonstration/1.jpg?raw=true)
 
