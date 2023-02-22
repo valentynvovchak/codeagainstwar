@@ -20,3 +20,9 @@ Authors
 ~~~~~~~
 
 Valentyn Vovchak
+
+![view](https://github.com/valentynvovchak/codeagainstwar/blob/main/demonstration/1.jpg?raw=true)
+
+![view](https://github.com/valentynvovchak/codeagainstwar/blob/main/demonstration/2.jpg?raw=true)
+
+![view](https://github.com/valentynvovchak/codeagainstwar/blob/main/demonstration/3.jpg?raw=true)
