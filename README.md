@@ -20,6 +20,3 @@ Authors
 ~~~~~~~
 
 Valentyn Vovchak
-
-
-![view](https://github.com/valentynvovchak/calypso-verify/blob/main/media/view.png?raw=true)
